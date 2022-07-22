@@ -7,7 +7,7 @@ export default function Example() {
     <div className="fixed  w-56 text-right">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex button justify-center rounded-full border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+          <Menu.Button className="inline-flex button justify-center rounded-full border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-400 hover:bg-gray-50">
                     <MenuIcon className="h-6" />
                     <UserCircleIcon className="h-6" />
           </Menu.Button>

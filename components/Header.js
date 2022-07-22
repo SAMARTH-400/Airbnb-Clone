@@ -68,11 +68,13 @@ function Header({placeholder}) {
                     placeholder= {placeholder || "Start your search!"}
                     autoComplete="false"
                 />
+                <button onClick={search}>
                 <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
+                </button>
             </div>
 
             {/* Right */}
-            <div className="flex items-center space-x-4 justify-end text-gray-500">
+            <div className="flex items-center space-x-4 justify-end text-gray-300">
             <DropDown/>
             </div>
             {searchInput && (
