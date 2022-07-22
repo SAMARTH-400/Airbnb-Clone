@@ -6,6 +6,7 @@ import {
     MenuIcon,
     UserCircleIcon,
     UserIcon,
+    SortAscendingIcon,
 } from "@heroicons/react/solid";
 
 import "react-date-range/dist/styles.css";

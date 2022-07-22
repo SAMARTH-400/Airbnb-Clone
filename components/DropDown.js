@@ -1,6 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { ChevronDownIcon, MenuIcon, UserCircleIcon } from '@heroicons/react/solid'
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Example() {
   return (
@@ -25,8 +26,11 @@ export default function Example() {
             <div className="px-1 py-1 ">
               <Menu.Item>
                 {({ active }) => (
-                  <button className={`${ active ? 'bg-red-400 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                    Edit
+                  <button 
+                  className={`${ active ? 'bg-red-400 text-white' : 'text-gray-900'} group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                  onClick={signIn}
+                  >
+                  SIGNIN
                   </button>
                 )}
               </Menu.Item>
