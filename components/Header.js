@@ -48,9 +48,9 @@ function Header({placeholder}) {
     };
 
     return (
-        <header className="sticky top-0 z-10 w-full grid grid-cols-3 isolate bg-white shadow-md p-5 md:px-10 ">
+        <header className="sticky top-0 z-10 w-full grid grid-cols-3 isolate bg-white shadow-md py-4 md:px-10 ">
             {/* left */}
-            <div onClick={() => router.push("/")} className="relative flex items-center h-10 cursor-pointer my-auto">
+            <div onClick={() => router.push("/")} className="relative flex items-center h-9 cursor-pointer my-auto">
                 <Image
                     src="https://links.papareact.com/qd3"
                     layout="fill"
