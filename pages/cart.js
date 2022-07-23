@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Footer from '../components/Footer'
 import InfoCard from '../components/InfoCard'
 import Header  from '../components/Header'
@@ -11,9 +12,9 @@ function checkout() {
     <div>
         <Header />
         <div className="flex flex-col">
-          {item?.map(
+          {item.length > 0 ? item.map(
             ({ img, description, lat, location, long, price, star, title, total,}) => (
-              <InfoCard
+              <cartCard
                 key={img}
                 img={img}
                 description={description}
@@ -24,10 +25,14 @@ function checkout() {
                 star={star}
                 title={title}
                 total={total}
-              />)
-           )}
+              />) 
+           ): 
+            <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[400px] 2xl:h-[400px] item-justify-center">
+                <Image src="/static/empty-cart.svg" layout="fill" />  
+              </div>
+           }
         </div>
-        <Footer />
+        <div className='fixed bottom-0'><Footer /></div>
     </div>
   )
 }

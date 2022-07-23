@@ -9,7 +9,7 @@ import SmallCard from "../components/SmallCard";
 export default function Home({ exploreData, cardsData }) {
     exploreData;
     return (
-        <div className="4er">
+        <div className="">
             <Head>
                 <title>AirBnb v2.0</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -56,10 +56,7 @@ export default function Home({ exploreData, cardsData }) {
                     />
                 </section>
             </main>
-
-            <footer>
-               <Footer />
-            </footer>
+            <Footer />
         </div>
     );
 }
