@@ -2,6 +2,8 @@ import 'tailwindcss/tailwind.css';
 import '../styles/global.css';
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
+import {store} from '../store';
+import {Provider} from 'react-redux';
 import { SessionProvider } from 'next-auth/react';
 
 
@@ -19,7 +21,9 @@ Router.events.on('routeChangeError', progress.finish);
 function MyApp({ Component, pageProps }) {
   return(
     <SessionProvider session={pageProps.session}>
+    <Provider store={store}>
       <Component {...pageProps} />
+    </Provider>
     </SessionProvider>
   ); 
 }
