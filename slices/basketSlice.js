@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
-    items: [],
+    items: [{img:"https://links.papareact.com/xqj",
+    description:"1 guest · 1 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Kitchen · Free parking · Washing Machine",
+    location:"Private room in center of London",
+    price:"£30 / night",
+    star:4.73,
+    title:"Stay at this spacious Edwardian House"}],
 };
 export const basketSlice = createSlice({
     name: "basket",
@@ -9,7 +14,9 @@ export const basketSlice = createSlice({
         addToBasket: (state, action) => {
             state.items = [...state.items, action.payload]
         },
-        removeFromBasket: (state, action) => {},
+        removeFromBasket: (state, action) => {
+            
+        },
     },
 });
 

@@ -1,40 +1,37 @@
 import React from 'react'
 import Image from 'next/image'
 import Footer from '../components/Footer'
-import InfoCard from '../components/InfoCard'
+import CartCard from '../components/CartCard'
 import Header  from '../components/Header'
 import {selectItems} from '../slices/basketSlice'
 import {useSelector , useDispatch} from 'react-redux';
+import {ShoppingCartIcon} from '@heroicons/react/outline'
 
-function checkout() {
+export default function cart() {
   const item = useSelector(selectItems);
   return (
     <div>
         <Header />
-        <div className="flex flex-col">
-          {item.length > 0 ? item.map(
-            ({ img, description, lat, location, long, price, star, title, total,}) => (
-              <cartCard
-                key={img}
-                img={img}
-                description={description}
-                lat={lat}
-                location={location}
-                long={long}
-                price={price}
-                star={star}
-                title={title}
-                total={total}
-              />) 
-           ): 
+        <div className="flex flex-col m-10">
+          {item.length > 0 ? 
+          <div className="flex flex-col">
+          <div className='flex'>
+          <p className="flex items-center"><ShoppingCartIcon className="h-7" /></p>
+          <h1 className="text-2xl font-semibold mt-10 mb-10 mx-4">YOUR CART</h1>
+          </div>
+            {item.map(
+              ({ img, description, location, price, star, title}) => (
+                <CartCard key={img} img={img} description={description} location={location} price={price} star={star} title={title} />
+              )
+            )}
+          </div>
+          : 
             <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] xl:h-[400px] 2xl:h-[400px] item-justify-center">
-                <Image src="/static/empty-cart.svg" layout="fill" />  
-              </div>
-           }
+              <Image src="/static/empty-cart.svg" layout="fill" />  
+            </div>
+          }
         </div>
-        <div className='fixed bottom-0'><Footer /></div>
+        <Footer />
     </div>
   )
 }
-
-export default checkout

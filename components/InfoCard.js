@@ -22,8 +22,7 @@ function InfoCard({img,description,location,price,star,title}) {
             </div>
             <div className="flex flex-col flex-grow pl-5">
                 <div className="flex justify-between">
-                    <p>{location}</p>
-                    <HeartIcon className="h-7 cursor-pointer" />
+                    <p className="text-sm text-gray-500 pt-2 flex-grow">{location}</p>
                 </div>
                 <h4 className="text-xl">{title}</h4>
                 <div className="border-b w-10 pt-2" />
@@ -37,7 +36,7 @@ function InfoCard({img,description,location,price,star,title}) {
                         {star}
                     </p>
                     <div className="flex pt-5 justify-between">
-                        <p className="text-lg font-semibold lg:text-2xl pb-2">{price}</p>
+                        <p className="text-lg font-semibold lg:text-lg">{price}</p>
                     { !cartStatus ?
                         <button 
                             className="bg-transparent hover:bg-red-400 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-red-400 hover:border-transparent rounded"

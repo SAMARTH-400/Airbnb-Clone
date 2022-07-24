@@ -88,7 +88,7 @@ function Header({placeholder}) {
                         className="shadow-lg"
                     />
                     <div className="flex justify-between mt-4">
-                        <h2 className="text-2xl ml-2 flex-grow font-semibold">Number of Guests</h2>  
+                        <h2 className="text-xl ml-2 flex-grow">Number of Guests</h2>  
                         <div className="flex items-center mx-auto">
                         <button
                             disabled={noOfGuests <= 0}
