@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { HeartIcon } from "@heroicons/react/outline";
 import { StarIcon } from "@heroicons/react/solid";
 import { useDispatch } from 'react-redux' 
 import { addToBasket } from '../slices/basketSlice'
@@ -36,7 +35,7 @@ function InfoCard({img,description,location,price,star,title}) {
                         {star}
                     </p>
                     <div className="flex pt-5 justify-between">
-                        <p className="text-lg font-semibold lg:text-lg">{price}</p>
+                        <p className="text-lg font-semibold lg:text-lg">{price.split("/")[0]}</p>
                     { !cartStatus ?
                         <button 
                             className="bg-transparent hover:bg-red-400 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-red-400 hover:border-transparent rounded"
