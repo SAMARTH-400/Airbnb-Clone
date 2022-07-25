@@ -71,7 +71,7 @@ export default function Example() {
   else{
     return(
       <button type="button" 
-      class=" flex item text-white bg-red-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-medium rounded-full text-sm px-7 py-2.5 mr-2"
+      className="flex item text-white bg-red-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-medium rounded-full text-sm px-7 py-2.5 mr-2"
       onClick={signIn}
       >Login</button>
 

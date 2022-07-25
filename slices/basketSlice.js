@@ -4,7 +4,7 @@ const initialState = {
     img:"https://links.papareact.com/xqj",
     description:"1 guest · 1 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Kitchen · Free parking · Washing Machine",
     location:"Private room in center of London",
-    price:"£30 / night",
+    price:"£30",
     star:4.73,
     title:"Stay at this spacious Edwardian House"}],
 };
@@ -28,4 +28,5 @@ export const basketSlice = createSlice({
 
 export const{ addToBasket , removeFromBasket } = basketSlice.actions;
 export const selectItems = (state) => state.basket.items;
+export const selectTotal = (state) => state.basket.items.reduce((total, item) => total + item.star, 0);
 export default basketSlice.reducer;
