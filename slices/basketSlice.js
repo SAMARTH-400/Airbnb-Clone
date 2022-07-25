@@ -6,7 +6,7 @@ const initialState = {
     location:"Private room in center of London",
     price:"£30",
     star:4.73,
-    title:"Stay at this spacious Edwardian House"}],
+    title:"Stay at this spacious Edwardian House"}]
 };
 export const basketSlice = createSlice({
     name: "basket",
@@ -28,5 +28,5 @@ export const basketSlice = createSlice({
 
 export const{ addToBasket , removeFromBasket } = basketSlice.actions;
 export const selectItems = (state) => state.basket.items;
-export const selectTotal = (state) => state.basket.items.reduce((total, item) => total + item.star, 0);
+export const selectTotal = (state) => state.basket.items.reduce((total, item) => total + (parseInt( item.price.substring(1).split(" ")[0] )), 0);
 export default basketSlice.reducer;

@@ -20,7 +20,7 @@ export default function cart() {
 
   const createStripeSession =  async() => {
     const stripe = await stripePromise;
-    const res = await axios.post( "/api/checkout_sessions" ,{
+    const res = await axios.post( '/api/checkout_sessions', {
       items: items,
       email: session.user.email
     });
