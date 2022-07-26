@@ -20,7 +20,7 @@ function cartCard({img,description,location,price,star,title}) {
             <div className="flex flex-col flex-grow pl-5">
                 <div className="flex justify-between">
                     <p className="text-sm text-gray-500 pt-2 flex-grow">{location}</p>
-                    <button onClick={remove}> {<XIcon className="h-5" />} </button>
+                    <button onClick={remove}> {<XIcon className="h-5 hover:scale-[1.05]" />} </button>
                 </div>
                 <h4 className="text-xl">{title}</h4>
                 <div className="border-b w-10 pt-2" />

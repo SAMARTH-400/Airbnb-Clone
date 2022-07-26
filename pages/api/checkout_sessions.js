@@ -6,7 +6,7 @@ export default async function (req, res){
     quantity:1,
     price_data:{
       unit_amount: 100*parseInt( item.price.substring(1).split(" ")[0] ),
-      currency: 'usd',
+      currency: 'gbp',
       product_data: {
         name: item.location,
         images: [item.img]
