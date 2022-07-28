@@ -6,12 +6,10 @@ console.log("webhook")
 // Secure a connection to FIREBASE from the backend
 const serviceAccount = require("../../permissions.json");
 const app = !admin.apps.length
-    ? admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-    })
-    : admin.app();
-
-
+  ? admin.initializeApp({
+     credential: admin.credential.cert(serviceAccount),
+  })
+  : admin.app();
 // Establish connection to Stripe
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const endpointSecret = process.env.STRIPE_SIGNING_SECRET;

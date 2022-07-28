@@ -17,7 +17,7 @@ export default async function (req, res){
     line_items: stripeItem,
     mode: 'payment',
     success_url: `${process.env.HOST}/success`,
-    cancel_url: `${process.env.HOST}/canceled`,
+    cancel_url: `${process.env.HOST}/cart`,
     metadata: {
       email
     }

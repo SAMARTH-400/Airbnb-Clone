@@ -1,6 +1,6 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { ChevronDownIcon, MenuIcon, UserCircleIcon } from '@heroicons/react/solid'
+import { MenuIcon, UserCircleIcon } from '@heroicons/react/solid'
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from 'next/router';
 
@@ -44,6 +44,19 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                   onClick={ () => router.push('/cart') }
+                >
+                  Your Cart
+                </div>
+              )}  
+            </Menu.Item>
+            <Menu.Item> 
+            {({ active }) => (
+                <div  href="#"
+                  className={classNames(
+                    active ? 'bg-gray-200 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                  onClick={ () => router.push('/trips') }
                 >
                   Trips
                 </div>

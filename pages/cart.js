@@ -30,10 +30,9 @@ export default function cart() {
   };
   
   return (
-      <div className='min-h-full '>
+      <div className=' relative min-h-screen'>
         <Header />
-        {/* right */}
-        <div className="flex flex-col m-10">
+        <div className="flex flex-col m-10 pb-10">
           {items.length > 0 ? 
           <div>
             <div className="flex flex-col">
