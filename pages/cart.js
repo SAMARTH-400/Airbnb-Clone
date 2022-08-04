@@ -42,8 +42,8 @@ export default function cart() {
               </div>
               <div className='flex justify-between pr-5'>
                 <div className='w-1/2'>{items.map(
-                  ({ img, description, location, price, star, title}) => (
-                    <CartCard key={img} img={img} description={description} location={location} price={price} star={star} title={title} />
+                  ({ key, state, hotel_name, img, star, price, amount, guests, lat, long }) => (
+                    <CartCard key={key} state={state} hotel_name={hotel_name} img={img} star={star} price={price} amount={amount} guests={guests} lat={lat} long={long} />
                   )
                 )}
                 </div>
@@ -51,7 +51,7 @@ export default function cart() {
                 <div className="bg-white shadow-lg rounded-lg h-full w-1/4">
                   <div className="bg-gray-100 text-center px-5 py-6">     
                     <h3 className="text-xl font-semibold text-gray-500 mb-1">SUBTOTAL</h3>
-                    <div className="text-lg mb-6 mt-3"><strong className="font-bold">£{total}</strong></div>
+                    <div className="text-lg mb-6 mt-3"><strong className="font-bold">₹ {total}</strong></div>
                     <button 
                     role="link"
                     className={`hover:scale-[1.01] font-semibold text-sm inline-flex items-center justify-center px-3 py-2 border border-transparent rounded leading-5 shadow transition duration-150 ease-in-out w-full focus:outline-none  text-white focus-visible:ring-2 ${!session ? 'bg-gray-500 hover:bg-gray-600' : 'bg-indigo-500 hover:bg-indigo-600'}`}

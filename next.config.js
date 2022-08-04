@@ -1,6 +1,6 @@
 module.exports = {
     images: {
-        domains: ["links.papareact.com" , " https://lp-cms-production.imgix.net"]
+        domains: ["links.papareact.com" , "lp-cms-production.imgix.net" , "images.unsplash.com" ]
     },
     env: {
         mapbox_access_key: "pk.eyJ1Ijoic3RvbmVyYm90IiwiYSI6ImNrczdweGc0czBtMnoycG10MDR6aGI5Z28ifQ.XvItc2HZjZPOmGmblGXkKw",

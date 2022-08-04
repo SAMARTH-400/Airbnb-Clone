@@ -4,12 +4,12 @@ import { StarIcon } from "@heroicons/react/solid";
 import { useDispatch } from 'react-redux' 
 import { addToBasket } from '../slices/basketSlice'
 
-function InfoCard({img,description,location,price,star,title}) {
+function InfoCard({key, state, hotel_name, img, star, price, amount, guests, lat, long}) {
     const [cartStatus, setcartStatust] = useState(false);
     const dispatch = useDispatch();
     const addItemToBasket = () => {
         const product = {
-            img,description,location,price,star,title
+            key, state, hotel_name, img, star, price, amount, guests, lat, long
         }
         dispatch(addToBasket(product));
         setcartStatust(true);
@@ -21,12 +21,12 @@ function InfoCard({img,description,location,price,star,title}) {
             </div>
             <div className="flex flex-col flex-grow pl-5">
                 <div className="flex justify-between">
-                    <p className="text-sm text-gray-500 pt-2 flex-grow">{location}</p>
+                    <p className="text-sm text-gray-500 pt-2 flex-grow"> Private room in {state} </p>
                 </div>
-                <h4 className="text-xl">{title}</h4>
+                <h4 className="text-xl">{hotel_name}</h4>
                 <div className="border-b w-10 pt-2" />
                 <p className="text-sm text-gray-500 pt-2 flex-grow">
-                    {description}
+                · 1 bedroom · 1 bed · 1 shared bathrooms · Wifi · Free parking`
                 </p>
 
                 <div>
@@ -35,7 +35,7 @@ function InfoCard({img,description,location,price,star,title}) {
                         {star}
                     </p>
                     <div className="flex pt-5 justify-between">
-                        <p className="text-lg font-semibold lg:text-lg">{price.split("/")[0]}</p>
+                        <p className="text-lg font-semibold lg:text-lg">{price}</p>
                     { !cartStatus ?
                         <button 
                             className="bg-transparent hover:bg-red-400 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-red-400 hover:border-transparent rounded"

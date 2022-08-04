@@ -37,21 +37,22 @@ function Search({ searchResults }) {
 
                     <div className="flex flex-col">
                         {searchResults.map(
-                            ({ img, description, lat, location, long, price, star, title, total,}) => (
+                            ({ key, state, hotel_name, img, star, price, amount, guests, lat, long }) => (
                                 <InfoCard
-                                    key={img}
+                                    key={key}
+                                    state={state}
+                                    hotel_name={hotel_name}
                                     img={img}
-                                    description={description}
-                                    lat={lat}
-                                    location={location}
-                                    long={long}
-                                    price={price}
                                     star={star}
-                                    title={title}
-                                    total={total}
+                                    price={price}
+                                    amount={amount}
+                                    guests={guests}
+                                    lat={lat}
+                                    long={long}
                                 />
                             )
                         )}
+                        
                     </div>
                 </section>
                 <section className="hidden xl:inline-flex xl:min-w-[600px]">
@@ -66,7 +67,10 @@ function Search({ searchResults }) {
 export default Search;
 
 export async function getServerSideProps() {
-    const searchResults = await fetch("https://links.papareact.com/isz").then(
+    // const searchResults = await fetch("https://links.papareact.com/isz").then(
+    //     (res) => res.json()
+    // );
+    const searchResults = await fetch("https://script.google.com/macros/s/AKfycbyVypSF-guAubFfnUsxWBsls7zCOKc34tPNMeJ9uJpMY9VJqZuIG43vQorXBrPs0vRH/exec").then(
         (res) => res.json()
     );
 

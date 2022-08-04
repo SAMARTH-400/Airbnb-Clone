@@ -5,10 +5,10 @@ export default async function (req, res){
   const stripeItem = items.map( (item) => ({
     quantity:1,
     price_data:{
-      unit_amount: 100*parseInt( item.price.substring(1).split(" ")[0] ),
-      currency: 'gbp',
+      unit_amount: 100 * item.amount,
+      currency: 'inr',
       product_data: {
-        name: item.location,
+        name: item.hotel_name,
         images: [item.img]
       },
     }
@@ -19,7 +19,8 @@ export default async function (req, res){
     success_url: `${process.env.HOST}/success`,
     cancel_url: `${process.env.HOST}/cart`,
     metadata: {
-      email
+      email,
+      images: JSON.stringify(items.map(item=>item.img))
     }
   });
   res.status(200).json({id : session.id});

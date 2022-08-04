@@ -22,6 +22,7 @@ const fulfillOrder = async (session) => {
         .collection("orders")
         .doc(session.id)
         .set({
+            images: JSON.parse(session.metadata.images), 
             amount: session.amount_total / 100,
             amount_shipping: session.total_details.amount_shipping / 100,
             timestamp: admin.firestore.FieldValue.serverTimestamp(),
@@ -39,16 +40,16 @@ export default async (req, res) => {
     let event;
     // Verify that the EVENT posted came from stripe
     try{
-        event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
+      event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
     } catch (err) {
-        return res.status(400).send(`Webhook error: ${err.message}`);
+      return res.status(400).send(`Webhook error: ${err.message}`);
     }
     // Handle the checkout.session.completed event
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
       // Fulfill the order...
       return fulfillOrder(session)
-        .then(() => res.status(200))
+        .then(() => res.status(200).send())
         .catch((err) => res.status(400).send(`Webhook Error: ${err.message}`));
     }
     res.status(200).send();
