@@ -313,10 +313,30 @@ const countries = [
   { country: "Zambia", abbreviation: "ZM" },
   { country: "Zimbabwe", abbreviation: "ZW" },
 ];
+const states = [
+  {id:0, name:'Delhi'},
+  {id:1, name:'Goa'},
+  {id:2, name:'Mumbai'},
+  {id:3, name:'Punjab'},
+  {id:4, name:'Rajasthan'},
+  {id:5, name:'Himachal pradesh'},
+  {id:6, name:'Jammu and Kashmir'},
+  {id:7, name:'Karnataka'},
+  {id:8, name:'Sikkim'},
+  {id:0, name:'Gujarat'},
+  {id:9, name:'Kerla'},
+  {id:10, name:'Bihar'},
+  {id:11, name:'Tamil Nadu'},
+  {id:12, name:'Assam'},
+  {id:13, name:'Arunachal pradesh'},
+  {id:14, name:'Andaman'},
+  {id:15, name:'Gujarat'},
+]
 
 export {
   useQuery,
   countries,
+  states,
   errorAnim,
   pageTransition,
   pageZoom,

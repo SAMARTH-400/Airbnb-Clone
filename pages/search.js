@@ -8,7 +8,6 @@ import Map from "../components/Map";
 
 function Search({ searchResults }) {
     const router = useRouter();
-
     const { location, startDate, endDate, noOfGuests } = router.query;
 
     const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
@@ -67,10 +66,7 @@ function Search({ searchResults }) {
 export default Search;
 
 export async function getServerSideProps() {
-    // const searchResults = await fetch("https://links.papareact.com/isz").then(
-    //     (res) => res.json()
-    // );
-    const searchResults = await fetch("https://script.google.com/macros/s/AKfycbyVypSF-guAubFfnUsxWBsls7zCOKc34tPNMeJ9uJpMY9VJqZuIG43vQorXBrPs0vRH/exec").then(
+    const searchResults = await fetch("https://script.google.com/macros/s/AKfycbxnal7p3CxFO4L8ms5rNVa5YSyax5bcxFzj6gccuZYGYvUn1gbpvXplBuAuaV71JXB-/exec").then(
         (res) => res.json()
     );
 

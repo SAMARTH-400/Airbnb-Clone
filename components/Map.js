@@ -21,12 +21,12 @@ function Map({ searchResults }) {
         height: "100%",
         latitude: center.latitude,
         longitude: center.longitude,
-        zoom: 11,
+        zoom: 10,
     });
 
     return (
         <ReactMapGL
-            mapStyle={process.env.mapbox_style_url}
+            mapStyle={process.env.MAPBOX_STYLE_URL}
             mapboxApiAccessToken={process.env.mapbox_access_key}
             {...viewport}
             onViewportChange={(nextViewport) => setViewport(nextViewport)}

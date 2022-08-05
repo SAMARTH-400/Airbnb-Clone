@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import DropDown from "./DropDown";
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import {states} from "./util";
+
 import {
     SearchIcon,
     MenuIcon,
@@ -15,6 +18,10 @@ import { DateRangePicker } from "react-date-range";
 import { useRouter } from "next/dist/client/router";
 
 function Header({placeholder}) {
+
+    const handleOnSelect = (item) => {
+        setSearchInput(item.name);
+    }
     const [searchInput, setSearchInput] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -50,7 +57,7 @@ function Header({placeholder}) {
     return (
         <header className="sticky top-0 z-10 w-full grid grid-cols-3 isolate bg-white shadow-md py-4 md:px-10 ">
             {/* left */}
-            <div onClick={() => router.push("/")} className="relative flex items-center h-9 cursor-pointer my-auto">
+            <div onClick={() => router.push("/")} className="relative flex items-center h-9 cursor-pointer my-auto max-w-[20%]   ">
                 <Image
                     src="https://links.papareact.com/qd3"
                     layout="fill"
@@ -60,17 +67,12 @@ function Header({placeholder}) {
             </div>
 
             {/* Middle - Search*/}
-            <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm">
-                <input
-                    onChange={(e) => setSearchInput(e.target.value)}
-                    value={searchInput}
-                    className="flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400"
-                    type="text"
-                    placeholder= {placeholder || "Start your search!"}
-                    autoComplete="false"
-                />
-                <button onClick={search}>
-                <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
+            <div className="flex items-center">
+                <div className="flex-grow">
+                    <ReactSearchAutocomplete items={states} onSelect={handleOnSelect} showIcon={false} showClear={false} placeholder="search indian states" />
+                </div>
+                <button onClick={search} className="invisible md:visible  absolute xl:ml-[29%] lg:ml-[27%] md:ml-[26%]" >
+                <SearchIcon className="md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
                 </button>
             </div>
 
