@@ -19,8 +19,8 @@ export default function Home({ exploreData, cardsData }) {
             <Banner />
             <main className="max-w-7xl mx-auto px-8 sm:px-16">
                 <section className="pt-6">
-                    <h2 className="text-4xl font-semibold pb-5">
-                        Explore Nearby
+                    <h2 className="text-3xl py-5 text-gray-500">
+                        EXPLORE 
                     </h2>
 
                     {/* API */}
@@ -37,8 +37,8 @@ export default function Home({ exploreData, cardsData }) {
                 </section>
 
                 <section>
-                    <h2 className="text-4xl font-semibold py-8">
-                        Live Anywhere
+                    <h2 className="text-3xl text-gray-500 py-8 mt-5">
+                        CATEGORY
                     </h2>
                     <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
                         {cardsData.map(({ img, title }) => (

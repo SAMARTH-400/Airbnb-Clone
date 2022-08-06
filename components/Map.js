@@ -14,14 +14,13 @@ function Map({ searchResults }) {
 
     // center point for coordinates
     const center = getCenter(coordinates);
-    console.log(center);
-
+    
     const [viewport, setViewport] = useState({
         width: "100%",
         height: "100%",
         latitude: center.latitude,
         longitude: center.longitude,
-        zoom: 10,
+        zoom: 10
     });
 
     return (

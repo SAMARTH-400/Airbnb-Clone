@@ -3,19 +3,12 @@ import Image from "next/image";
 import DropDown from "./DropDown";
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import {states} from "./util";
-
-import {
-    SearchIcon,
-    MenuIcon,
-    UserCircleIcon,
-    UserIcon,
-    SortAscendingIcon,
-} from "@heroicons/react/solid";
-
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRangePicker } from "react-date-range";
 import { useRouter } from "next/dist/client/router";
+import { SearchIcon, MenuIcon, UserCircleIcon, UserIcon, SortAscendingIcon } from "@heroicons/react/solid";
+
 
 function Header({placeholder}) {
 
@@ -37,6 +30,7 @@ function Header({placeholder}) {
     }
 
     const search = () => {
+        resetInput();
         router.push({
             pathname: '/search',
             query: {
@@ -57,7 +51,7 @@ function Header({placeholder}) {
     return (
         <header className="sticky top-0 z-10 w-full grid grid-cols-3 isolate bg-white shadow-md py-4 md:px-10 ">
             {/* left */}
-            <div onClick={() => router.push("/")} className="relative flex items-center h-9 cursor-pointer my-auto max-w-[20%]   ">
+            <div onClick={() => router.push("/")} className="ml-1 relative flex items-center h-9 cursor-pointer my-auto lg:max-w-[20%] md:max-w-[40%] sm:max-w-[50%] ">
                 <Image
                     src="https://links.papareact.com/qd3"
                     layout="fill"
@@ -69,7 +63,7 @@ function Header({placeholder}) {
             {/* Middle - Search*/}
             <div className="flex items-center">
                 <div className="flex-grow">
-                    <ReactSearchAutocomplete items={states} onSelect={handleOnSelect} showIcon={false} showClear={false} placeholder="search indian states" />
+                    <ReactSearchAutocomplete items={states} onSelect={handleOnSelect} showIcon={false} showClear={false} placeholder="search indian states" autoFocus={true} />
                 </div>
                 <button onClick={search} className="invisible md:visible  absolute xl:ml-[29%] lg:ml-[27%] md:ml-[26%]" >
                 <SearchIcon className="md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />

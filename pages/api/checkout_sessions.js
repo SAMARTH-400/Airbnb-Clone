@@ -3,7 +3,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 export default async function (req, res){
   const {items,email} = req.body; 
   const stripeItem = items.map( (item) => ({
-    quantity:1,
+    quantity:item.days,
     price_data:{
       unit_amount: 100 * item.amount,
       currency: 'inr',

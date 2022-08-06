@@ -4,12 +4,12 @@ import { StarIcon } from "@heroicons/react/solid";
 import { useDispatch } from 'react-redux' 
 import { addToBasket } from '../slices/basketSlice'
 
-function InfoCard({key, state, hotel_name, img, star, price, amount, guests, lat, long}) {
+function InfoCard({key, state, hotel_name, img, star, price, amount, guests, lat, long, days}) {
     const [cartStatus, setcartStatust] = useState(false);
     const dispatch = useDispatch();
     const addItemToBasket = () => {
         const product = {
-            key, state, hotel_name, img, star, price, amount, guests, lat, long
+            key, state, hotel_name, img, star, price, amount, guests, lat, long, days
         }
         dispatch(addToBasket(product));
         setcartStatust(true);
@@ -26,13 +26,13 @@ function InfoCard({key, state, hotel_name, img, star, price, amount, guests, lat
                 <h4 className="text-xl">{hotel_name}</h4>
                 <div className="border-b w-10 pt-2" />
                 <p className="text-sm text-gray-500 pt-2 flex-grow">
-                · 1 bedroom · 1 bed · 1 shared bathrooms · Wifi · Free parking`
+                · 1 bedroom · 1 bed · 1 shared bathrooms · Wifi · Free parking · upto {guests} guests
                 </p>
 
                 <div>
                     <p className="flex items-center">
                         <StarIcon className="h-5 text-red-400" />
-                        {star}
+                        {star===0 ? 'NEW' : star}
                     </p>
                     <div className="flex pt-5 justify-between">
                         <p className="text-lg font-semibold lg:text-lg">{price}</p>

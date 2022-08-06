@@ -16,11 +16,11 @@ export const basketSlice = createSlice({
             const newBasket = [...state.items];
             newBasket.splice(index, 1);
             state.items = newBasket;    
-        },
+        }
     },
 });
 
 export const{ addToBasket , removeFromBasket } = basketSlice.actions;
 export const selectItems = (state) => state.basket.items;
-export const selectTotal = (state) => state.basket.items.reduce((total, item) => total + (parseInt( item.amount )), 0);
+export const selectTotal = (state) => state.basket.items.reduce((total, item) => total + (parseInt( item.amount * item.days )), 0);
 export default basketSlice.reducer;
