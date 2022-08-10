@@ -51,11 +51,11 @@ function Search({ searchResults }) {
                         STAYS IN {location.toUpperCase()}
                     </h1>
                     <p className="text-sm text-gray-700  mb-10 space-x-3">
-                        <span>{requiredResults.length} STAYS</span>
+                        <span>{requiredResults.length} Stays</span>
                         <span>|</span>
                         <span>{range}</span> 
                         <span>|</span>
-                        <span>{noOfGuests}  GUESTS</span>
+                        <span>{noOfGuests}  Guests</span>
                     </p>
                     <div className="flex my-5 text-gray-800 whitespace-nowrap justify-end space-x-10  "  >
                        

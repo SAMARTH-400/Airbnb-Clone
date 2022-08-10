@@ -17,7 +17,7 @@ const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 const fulfillOrder = async (session) => {
     return app
         .firestore()
-        .collection("users")
+        .collection("customers")
         .doc(session.metadata.email)
         .collection("orders")
         .doc(session.id)

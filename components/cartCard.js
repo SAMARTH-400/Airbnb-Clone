@@ -34,7 +34,7 @@ function cartCard({ key, state, hotel_name, img, star, price, amount, guests, la
                     </p>
                     <div className="flex pt-5 justify-between">
                         <p></p>
-                        <p className="text-lg font-semibold lg:text-lg">{price}</p>
+                        <p className="text-lg font-semibold">{price} <span className=" text-sm  text-gray-500   ">/ day</span></p>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,6 @@ import {store} from '../store';
 import {Provider} from 'react-redux';
 import { SessionProvider } from 'next-auth/react';
 
-
 const progress = new ProgressBar({
   size: 4,
   color: "#FE595E",

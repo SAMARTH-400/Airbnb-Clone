@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { useRouter } from "next/router";
+import { useRouter } from "next/dist/client/router";
 import {CheckCircleIcon} from '@heroicons/react/solid'
 import Image from "next/image";
 
@@ -21,7 +21,9 @@ export default function success() {
                             <div className=' text-green-500 font-extralight m-auto ' > You will be receiving a confiramtion email with your order. </div>
                         </div> 
                         <div className="justify-center mx-auto my-5">
-                        <button type="button" class="text-green-700 hover:text-white border border-gray-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={ () => router.push('/trips') }>Continue Exploring </button>
+                        <button type="button" class="text-green-700 hover:text-white border border-gray-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={ () => router.push('/trips') }>
+                            Your Trips
+                        </button>
                         </div>
                     </div>    
                 </div>

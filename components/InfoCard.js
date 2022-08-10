@@ -35,7 +35,7 @@ function InfoCard({key, state, hotel_name, img, star, price, amount, guests, lat
                         {star===0 ? 'NEW' : star}
                     </p>
                     <div className="flex pt-5 justify-between">
-                        <p className="text-lg font-semibold lg:text-lg">{price}</p>
+                        <p className="text-lg font-semibold">{price} <span className=" text-sm  text-gray-500   ">/ day</span></p>
                     { !cartStatus ?
                         <button 
                             className="bg-transparent hover:bg-red-400 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-red-400 hover:border-transparent rounded"
