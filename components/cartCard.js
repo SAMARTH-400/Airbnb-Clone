@@ -4,7 +4,7 @@ import { StarIcon , XIcon } from "@heroicons/react/solid";
 import { useDispatch } from 'react-redux' 
 import { removeFromBasket } from '../slices/basketSlice'
 
-function cartCard({ key, state, hotel_name, img, star, price, amount, guests, lat, long, days }) {
+function CartCard({ key, state, hotel_name, img, star, price, amount, guests, lat, long, days }) {
     const dispatch = useDispatch();
     const remove = () => {
         const product = {
@@ -42,4 +42,4 @@ function cartCard({ key, state, hotel_name, img, star, price, amount, guests, la
     );
 }
 
-export default cartCard;
+export default CartCard;
