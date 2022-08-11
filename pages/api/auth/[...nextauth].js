@@ -43,10 +43,5 @@ export default NextAuth({
   }),
   pages: {
     signIn: "/login",
-  },
-  callbacks: {
-    redirect: async (url, baseUrl) => {
-      return Promise.resolve(url)
-    }
   }
 })
