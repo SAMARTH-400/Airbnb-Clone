@@ -11,7 +11,7 @@ export const basketSlice = createSlice({
         },
         removeFromBasket: (state, action) => {
             const index = state.items.findIndex(
-                (basketItem) => basketItem.id === action.payload.id
+                (basketItem) => basketItem.hotel_name === action.payload.hotel_name
             );
             const newBasket = [...state.items];
             newBasket.splice(index, 1);

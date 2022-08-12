@@ -12,7 +12,7 @@ export default function Example() {
   const router = useRouter();
   if ( session ) {
     return (
-    <div className="fixed w-56 text-right">
+    <div className="w-56 text-right">
       <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex justify-center rounded-full border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-400 hover:bg-gray-50 hove:down-shadow-lg">
@@ -35,7 +35,6 @@ export default function Example() {
             <p className='text-black'>Signed in as </p>
             <p className=' text-red-400'>{session.user.name} </p>
           </div>
-              
             <Menu.Item> 
             {({ active }) => (
                 <div  href="#"

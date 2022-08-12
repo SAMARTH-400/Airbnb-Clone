@@ -7,10 +7,7 @@ import { removeFromBasket } from '../slices/basketSlice'
 function CartCard({ key, state, hotel_name, img, star, price, amount, guests, lat, long, days }) {
     const dispatch = useDispatch();
     const remove = () => {
-        const product = {
-            key, state, hotel_name, img, star, price, amount, guests, lat, long, days
-        }
-        dispatch(removeFromBasket(product));
+        dispatch( removeFromBasket({hotel_name}) );
     }
     return (
         <div className="flex py-7 pl-2 pr-4 border-b hover:shadow-md transition duration-200 ease-out first:border-t rounded-xl mb-10">
