@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Image from "next/image";
 import DropDown from "./DropDown";
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
@@ -14,13 +14,23 @@ function Header({placeholder}) {
 
     const handleOnSelect = (item) => {
         setSearchInput(item.name);
+        setScrolled(true);
     }
     const [searchInput, setSearchInput] = useState("");
+    const [scrolled, setScrolled] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [noOfGuests, setNoOfGuests] = useState(1);
     const router = useRouter();
 
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY > 10) setScrolled(true);
+            else setScrolled(false);
+        };
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
     const handleSelect = (ranges) => {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
@@ -49,7 +59,7 @@ function Header({placeholder}) {
     };
 
     return (
-        <header className="sticky top-0 z-10 w-full grid grid-cols-3 isolate bg-white shadow-md py-4 md:px-10 ">
+        <header className={"fixed top-0 z-10 w-full grid grid-cols-3 isolate py-2 md:px-10 shadow-m " + (scrolled ? "bg-white" : "bg-transparent" )  }>
             {/* left */}
             <div onClick={() => router.push("/")} className="ml-1 relative flex items-center h-9 cursor-pointer my-auto lg:max-w-[20%] md:max-w-[40%] sm:max-w-[50%] ">
                 <Image
@@ -61,7 +71,7 @@ function Header({placeholder}) {
             </div>
 
             {/* Middle - Search*/}
-            <div className="flex items-center">
+            <div className="flex items-center mt-2">
                 <div className="flex-grow">
                     <ReactSearchAutocomplete items={states} onSelect={handleOnSelect} showIcon={false} showClear={false} placeholder="search indian states" autoFocus={true} />
                 </div>

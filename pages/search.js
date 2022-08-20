@@ -44,8 +44,8 @@ function Search({ searchResults }) {
     }
     return (
         <div className="">
-            <Header placeholder={`${location} | ${range} | ${noOfGuests}`} />
-            <main className="flex">
+            <Header />
+            <main className="flex pt-20  ">
                 <section className="flex-grow pt-10 px-6">
                     <h1 className="text-xl font-bold   mb-3">
                         STAYS IN {location.toUpperCase()}

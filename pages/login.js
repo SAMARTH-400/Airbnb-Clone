@@ -5,14 +5,14 @@ export default function Login( { csrfToken } ) {
     return (
         <div>
             <body>
-                <div className="lg:flex flex-row-reverse">
-                    <div className="lg:w-1/2 xl:max-w-screen-sm  ">
-                        <div className="py-3 bg-white flex justify-center lg:justify-start lg:px-12 ">
-                            <div className="cursor-pointer flex items-center h-32 w-32 relative ml-7 ">
+                <div className="flex justify-center items-center lg:background ">
+                    <div className="w-full h-full lg:h-auto lg:w-[45%] xl:w-[35%] 2xl:w-[28%] bg-white rounded-md lg:shadow-xl ">
+                        <div className="bg-white flex justify-center lg:justify-start lg:px-12 rounded-md ">
+                            <div className="cursor-pointer flex items-center h-32 w-32 relative ml-7 scale-95">
                                 <Image src="/static/airbnbpurple.svg" layout='fill' />
                             </div>
                         </div>
-                        <div className="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
+                        <div className="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 ">
                             <div className="mt-12">
                                 <form method="post" action="/api/auth/signin/email">
                                     <div className="mb-5">
@@ -34,7 +34,7 @@ export default function Login( { csrfToken } ) {
                             <br/>
                             <span className="flex items-center justify-center space-x-2 pt-5">
                                 <span className="h-px bg-gray-300 w-14"></span>
-                                <span className="text-gray-400 text-sm f">Or Login With</span>
+                                <span className="text-gray-400 text-sm f">OR</span>
                                 <span className="h-px bg-gray-300 w-14"></span>
                             </span>
                             <div className="mt-10">
@@ -63,11 +63,6 @@ export default function Login( { csrfToken } ) {
 
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    <div className="hidden lg:flex items-center justify-center  bg-purple-300 flex-1 h-screen">
-                        <div className="h-[53%] w-[53%] mb-40 ">
-                        <img src="/static/mmmm2.png"></img>
                         </div>
                     </div>
                 </div>
